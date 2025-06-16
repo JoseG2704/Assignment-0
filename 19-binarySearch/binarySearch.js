@@ -5,6 +5,19 @@ class MySolution {
 
   binarySearch(nums, target) {
     // Insert code here;
+     function search(start, end) {
+      if (start > end) return false;
+      const mid = Math.floor((start + end) / 2);
+
+      if (numss[mid] === target) {
+        return true;
+      } else if (nums[mid] > target) {
+        return search(start, mid - 1);
+      } else {
+        return search(mid + 1, end);
+      }
+    }
+    return search(0, nums.length - 1);
   }
 }
 
